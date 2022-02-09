@@ -1,14 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
 import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+import { ThemeProvider } from "styled-components";
+import { RecoilRoot } from "recoil";
+import { darkTheme, lightTheme } from "./theme";
+import { isDarkAtom } from "./atom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <RecoilRoot>
+      <ThemeProvider theme={isDarkAtom ? darkTheme : lightTheme}>
+        <App />
+      </ThemeProvider>
+    </RecoilRoot>
   </React.StrictMode>,
   document.getElementById("root")
 );
-
-reportWebVitals();
