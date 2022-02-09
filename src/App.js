@@ -1,7 +1,11 @@
-import "./App.css";
+import { Tabs } from "./components/index";
 
 function App() {
-  return null;
+  return (
+    <>
+      <Tabs />
+    </>
+  );
 }
 
 export default App;
